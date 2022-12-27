@@ -108,7 +108,7 @@ function alertNoMoney() {
 }
 
 function checkIfRich() {
-  if(money > 150) {
+  if((money > 150) && (money < 200)) {
     explode(icon, items);
   }
 }
@@ -120,7 +120,7 @@ function cheatCode() {
 
     // Add $50 every 0.5 seconds
     const moneyInterval = setInterval(() => {
-      money += 5;
+      money+= 5;
       count.textContent = `$${money}`;
     }, 5);
     setTimeout(animate, 10);
