@@ -131,8 +131,6 @@ function cheatCode() {
   }
 }
 
-setInterval(() => explode(icon, ['🤑', '💵', '$'], 5), 200);
-
 cheatButton.addEventListener('click', cheatCode);
 export {}
 
