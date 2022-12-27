@@ -1,4 +1,4 @@
-import { animate } from './rain';
+import { animate } from './rain.js';
 
 const sellButton = document.querySelector('.sell');
 const spendButton = document.querySelector('.spend');
