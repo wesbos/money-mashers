@@ -1,0 +1,168 @@
+:root {
+  --arieMoneyGreen: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html {
+  font-size: 50px;
+}
+
+body {
+  background: #00ff00;
+  transition: all 0.2s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+body.no-money {
+  background: red;
+  animation: shake 0.2s;
+  animation-iteration-count: infinite;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+span.money {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+button img {
+  max-width: 100%;
+  width: 150px;
+  mix-blend-mode: darken;
+}
+
+button {
+  color: black;
+  font-family: cursive;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 0;
+  cursor: pointer;
+  background: var(--arieMoneyGreen);
+  border-radius: 20px;
+  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  font-size: 50px;
+}
+
+button:hover {
+  scale: 1.1;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
+}
+.icon {
+  margin: 0;
+  --font: 50px;
+  font-size: var(--font);
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.count {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  pointer-events: none;
+}
+
+.items {
+  grid-column: 1 / -1;
+  gap: 20px;
+  text-align: center;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+
+.item {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.item span {
+  background: white;
+  font-size: 15px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  top: 0;
+  position: absolute;
+}
+
+#animate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.cheat {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0;
+  font-size: 10px;
+}
