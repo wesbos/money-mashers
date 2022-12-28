@@ -2,6 +2,7 @@
   --arieMoneyGreen: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 html {
   font-size: 50px;
 }
@@ -9,6 +10,7 @@ html {
 body {
   background: #00ff00;
   transition: all 0.2s;
+
 }
 
 @keyframes shake {
@@ -63,6 +65,7 @@ body.no-money {
   animation-iteration-count: infinite;
 }
 
+
 .app {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -98,12 +101,14 @@ button {
   box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s;
   font-size: 50px;
+  max-height: 250px;
 }
 
 button:hover {
   scale: 1.1;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
 }
+
 .icon {
   margin: 0;
   --font: 50px;
@@ -165,4 +170,44 @@ button:hover {
   right: 50px;
   opacity: 0;
   font-size: 10px;
+}
+
+@media (max-width: 640px) {
+
+  .sell {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+  }
+
+  .spend {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+  }
+
+  .spend p {
+    margin-top: 0;
+  }
+
+  .sell p {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .app {
+    grid-template-columns: 1fr;
+
+  }
+
+  .sell {
+    margin: 0 0 12px 0;
+  }
+
+  .spend {
+    margin: 0;
+  }
+
+
 }
