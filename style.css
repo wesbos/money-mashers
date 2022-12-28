@@ -99,7 +99,7 @@ button {
   background: var(--arieMoneyGreen);
   border-radius: 20px;
   box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
-  /* transition: all 0.3s; */
+  transition: all 0.3s;
   font-size: 50px;
   max-height: 250px;
 }
