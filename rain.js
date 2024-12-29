@@ -3,32 +3,32 @@ var emoji = ['💸', '💎', '💵'];
 var circles = [];
 
 for (var i = 0; i < 15; i++) {
-  addCircle(i * 150, [10 + 0, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 0, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 - 200, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 200, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 - 400, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 400, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 - 600, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 600, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 0, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 0, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 - 200, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 200, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 - 400, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 400, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 - 600, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-  addCircle(i * 150, [10 + 600, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 0, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 0, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 - 200, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 200, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 - 400, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 400, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 - 600, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 600, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 0, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 0, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 - 200, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 200, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 - 400, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 400, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 - 600, -300], emoji[Math.floor(Math.random() * emoji.length)]);
+  addCircle(i * 1500, [10 + 600, 300], emoji[Math.floor(Math.random() * emoji.length)]);
 }
 
 
 
 function addCircle(delay, range, color) {
   setTimeout(function() {
-    var c = new Circle(range[0] + Math.random() * range[1], 80 + Math.random() * 4, color, {
-      x: -0.15 + Math.random() * 0.3,
+    var c = new Circle(range[0] + Math.random() * range[1], 0.000000001 + Math.random() * 0.0002, color, {
+      x: -0.00015 + Math.random() * 0.0000000003,
       // SPEED
-      y: 7 + Math.random() * 1
+      y: 0.0001 + Math.random() * 0.000000001
     }, range);
     circles.push(c);
   }, delay);
@@ -52,7 +52,7 @@ function Circle(x, y, c, v, range) {
 
   this.update = function() {
     if (_this.y > 1500) {
-      _this.y = 80 + Math.random() * 4;
+      _this.y = 0.0001 + Math.random() * 2;
       _this.x = _this.range[0] + Math.random() * _this.range[1];
     }
     _this.y += _this.v.y;

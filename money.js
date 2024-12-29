@@ -9,17 +9,18 @@ const icon = document.querySelector('.icon');
 const itemsDiv = document.querySelector('.items');
 
 let money = 100;
-const priceHigh = 10;
-const priceLow = 5;
+const priceHigh = 17;
+const priceLow = 1;
 let moneyBagSize = 50;
-const GROW = 30;
+const GROW = 70;
 
-let items = ['💎', '💵', '🦄', '🏆', '🎖️', '👑', '🐰'];
+let items = ["📱", "💻", "📸", "🎧", "🎤", "🎧", "🎤", "🖥️"];
 
 let myInventory = [...items];
 
 function sell() {
-  // When you sell, your money bag gets bigger!
+  // When you sell, your money bag gets bigger!\
+  // This is how much money you get, Here are the odds
   const moneySell = Math.round(Math.random() * (priceHigh - priceLow) + priceLow);
   if(myInventory.length === 0) {
     alert('You don\'t have any items to sell!');
@@ -39,7 +40,8 @@ function sell() {
   // update the text content of the count element
   count.textContent = `$${money}`;
   // update css variables
-  icon.style.setProperty('--font', `${moneyBagSize+=GROW}px`);
+  // icon.style.setProperty('--font', `${moneyBagSize+=GROW}px`);
+  icon.style.setProperty("--font", `${money / 2}px`);
   checkIfRich();
   explode(icon, ['🤑', '💵', '$'], 5)
 }
@@ -56,7 +58,8 @@ function spend() {
   // update the text content of the count element
   count.textContent = `$${money}`;
   // update css variables
-  icon.style.setProperty('--font', `${moneyBagSize-=GROW}px`);
+  // icon.style.setProperty('--font', `${moneyBagSize-=GROW}px`);
+  icon.style.setProperty("--font", `${money / 2}px`);
   // add an item to the inventory
   const item = items[Math.floor(Math.random() * items.length)];
   myInventory = [...myInventory, item];
@@ -85,7 +88,7 @@ populateIventory();
 sellButton.addEventListener('click', sell);
 spendButton.addEventListener('click', spend);
 
-function explode(element, emojis, emojiCount = 80) {
+function explode(element, emojis, emojiCount = 60) {
   emojisplosion({
 	  emojis,
     emojiCount,
@@ -108,27 +111,43 @@ function alertNoMoney() {
 }
 
 function checkIfRich() {
-  if((money > 150) && (money < 200)) {
+  if(money > 1000) {
     explode(icon, items);
+    // Make the bag smaller
+    icon.classList.add('shrink');
+    setTimeout(() => {
+      // change it to another emoji
+      icon.textContent = '👑';
+      // Make it bigger
+      icon.classList.remove('shrink');
+      document.body.classList.add('rich');
+    }, 3000)
   }
 }
 
 function cheatCode() {
-  const code = prompt(`What is the cheat code?`);
-  if(code === 'ar1e') {
+  // const code = prompt(`What is the cheat code?`);
+  const code = "🤑Ar13🤑";
+  if(code === '🤑Ar13🤑') {
     animateDiv.style.display = 'block';
 
-    // Add $50 every 0.5 seconds
+    // Add $50 every 0.05 seconds
     const moneyInterval = setInterval(() => {
-      money+= 5;
+      money+= 50;
       count.textContent = `$${money}`;
-    }, 5);
-    setTimeout(animate, 10);
+    }, 2);
+
     setTimeout(() => {
       animateDiv.style.display = 'none';
       clearInterval(moneyInterval);
     }, 10000);
   }
+}
+
+
+function shutDown() {
+  document.body.classList.add('shut-down');
+
 }
 
 cheatButton.addEventListener('click', cheatCode);
